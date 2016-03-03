@@ -78,3 +78,6 @@ sudo cp /home/vagrant/provision/vivo/index.jsp $WEBAPPDIR/ROOT/index.jsp
 
 #Start Tomcat
 sudo /etc/init.d/tomcat7 start
+
+# Call restore of mysql file with UF data set
+sudo restore_uf_data.sh
