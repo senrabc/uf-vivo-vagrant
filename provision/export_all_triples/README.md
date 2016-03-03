@@ -1,28 +1,44 @@
-How to extract all triples in N-triples format from a vivo 1.6.3
+# How to extract all triples in N-triples format from a vivo 1.7
 
-1. $ git clone git@github.com:lawlesst/vivo-vagrant.git
-2. $ cd vivo-vagrant
-3. git checkout v1.6
-4. EDIT: Vagrantfile increase memory to 8GB, db needs more mem
+
+You may need more memory in your vagrant to export out all triples.
+To increase memory goto the Vagrantfile.
+
+Change
+
+  ```
   #Memory 2GBs
-  config.vm.customize ["modifyvm", :id, "--memory", 2048]
-  to
+  config.vm.customize ["modifyvm", :id, "--memory", 2048]```
+To
+  ```
   #Memory 2GBs
-  config.vm.customize ["modifyvm", :id, "--memory", 8192]
-5. $ vagrant up
-6. goto usr/local/share/vivo/backups/vivo-prod-db/daily on vivo.ufl.edu
-7. get daily.gz (newest date) ex. daily_vivo_prod_db_2015-07-22_00h00m_Wednesday.sql.gz
-8. vivo.ufl.edu$ cp daily_vivo_prod_db_2015-07-22_00h00m_Wednesday.sql.gz.gz ~/
-9. localmachine$ scp cpb@vivo.ufl.edu:*.gz .
- 10.  localmachine$ gzip -d daily_vivo_prod_db_2015-07-22_00h00m_Wednesday.sql.gz
-11. cd into vivo-vagrant and put dailys.gz into /provision
-12. $mv ../daily_vivo_prod_db_2015-07-22_00h00m_Wednesday.sql provision/
-13. $vagrant ssh #ssh into the vagrant to restore the db
-14. $mkdir splits && cd splits
-15. $split the sql dump to make the restore faster.
-    $split -l 500 ../daily_vivo_prod_db_2015-07-22_00h00m_Wednesday.sql sql_
-16. $cd ..
-17. screen -R restore
-18. #restoredb $ cat splits/sql_* | mysql --host localhost -uroot -pvivo vivo16dev
-19. #exitscreen $ ctrl-A ctrl-D
-20. The restore can take up to an hour or more.
+  config.vm.customize ["modifyvm", :id, "--memory", 8192]```
+Then
+
+```$ vagrant up```
+
+# Extras
+If you are trying to use this vagrant to dump other triples using
+a mysql backup then restore sql dump from other server if need be.
+
+```$vagrant ssh #ssh into the vagrant to restore the db```
+
+```$mkdir splits && cd splits```
+
+Split the sql dump into smaller files to make the restore faster.
+I've found this cuts the restore time in 1/2. Don't know exactly why,
+but then I don't question stuff that works ;)
+
+
+```$split -l 500 my_big_ol_sql_dumpfile.sql sql_```
+
+You may want to do this with screen if it will take a while
+
+```$screen -R restore```
+
+To restore db
+
+```$ cat splits/sql_* | mysql --host localhost -uroot -pvivo vivo17dev```
+
+To exit screen us ctrl-A + ctrl-D
+FYI, with backfiles +4GB The restore can take up to an hour or more.
