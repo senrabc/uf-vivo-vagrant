@@ -1,3 +1,6 @@
 .vagrant*
 *~
 work/*
+
+#don't commit any of the out files at this time
+*out.*
