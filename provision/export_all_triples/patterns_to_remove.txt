@@ -1,0 +1,6 @@
+http://vivo.ufl.edu/harvested/thumbDirDownload/ufid
+http://vivo.ufl.edu/ontology/vivo-ufl/ufid
+http://vivo.ufl.edu/harvested/peopleImage
+http://vivo.ufl.edu/harvested/thumbImg
+http://vivo.ufl.edu/harvested/mainImg
+http://vivo.ufl.edu/harvested/fullDirDownload
