@@ -6,3 +6,5 @@ work/*
 *out.*
 *.gz*
 *.sql*
+temp/*
+
