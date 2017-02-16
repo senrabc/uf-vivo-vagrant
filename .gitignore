@@ -7,4 +7,4 @@ work/*
 *.gz*
 *.sql*
 temp/*
-
+provision/temp/*
