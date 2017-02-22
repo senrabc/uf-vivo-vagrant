@@ -55,3 +55,4 @@ Vagrant.configure("2") do |config|
   config.trigger.after :up do
      system("open", "http://localhost:8080/vivo/")
   end
+end

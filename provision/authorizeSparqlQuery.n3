@@ -1,0 +1,10 @@
+
+# copy file here & restart
+#/usr/local/vdata/rdf/auth/everytime
+
+
+@prefix auth: <http://vitro.mannlib.cornell.edu/ns/vitro/authorization#> .
+@prefix simplePermission: <java:edu.cornell.mannlib.vitro.webapp.auth.permissions.SimplePermission#> .
+
+# Authorize the ADMIN role to use the SPARQL Query API
+auth:ADMIN auth:hasPermission simplePermission:UseSparqlQueryApi .
