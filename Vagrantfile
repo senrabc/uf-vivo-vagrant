@@ -52,4 +52,6 @@ Vagrant.configure("2") do |config|
   #config.vm.share_folder "provision", "/home/vagrant/provision", "provision"
 
   config.vm.provision "shell", path: "provision/bootstrap.sh", privileged: true	
-end
+  config.trigger.after :up do
+     system("open", "http://localhost:8080/vivo/")
+  end
