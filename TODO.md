@@ -12,3 +12,5 @@ TODO: find somewhere to host a 4+ GB mysqldumpfile so the install script can
       wget it
 
 TODO: load the UFVIVO ontology via the install.sh
+
+TODO: Two options in the Readme for installing the Vagrant box. Need to differentiate the purpose of each.
