@@ -15,7 +15,7 @@ DB_NAME=vivo17dev
 
 #use true or false, in bash returns 0 or 1
 ZIP_DB=false
-DB_TIMESTAMP=$(date +%Y-%m-%d-%H.%M.%S)
+DB_TIMESTAMP=$(date +%Y_%m_%d_%H%M%S)
 
 #backup the database
 
