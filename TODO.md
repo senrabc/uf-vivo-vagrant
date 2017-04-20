@@ -21,6 +21,9 @@ TODO: [C] (senrabc@gmail.com) 0000-01-01 2017-04-20 This is the text of my TODO
 
 # TODO LIST: (Lots of stuff TODO, so just do it ;)
 
+TODO: [A] (senrabc@gmail.com) 0000-01-01 2017-04-20 @uf-vivo-vagrant needs end to end testing @gitrepo
+TODO: [A] (senrabc@gmail.com) 0000-01-01 2017-04-20 @uf-vivo-vagrant needs ends a vagrant with real data @gitrepo
+TODO: [A] (senrabc@gmail.com) 0000-01-01 2017-04-20 @uf-vivo-vagrant needs ends a SMALL sample RDF file with people, pubs, grants in it so users can experiment @gitrepo
 TODO: Peel all users out of mysqldumpfile
 
 TODO: add msysql restore of strip'd dumpfile to to install.sh

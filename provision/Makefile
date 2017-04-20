@@ -14,9 +14,9 @@ help:
 
 
 
-clean:
-	# get rid of any old csv output files
-	-rm -rf out.txt
+back_up_current_db_state:
+	# dump out a timestamped data base dump file of the mysql data base.
+	-vagrant ssh -c 'mysqldump -h host -uroot -pvivo vivo17dev > vivo17dev_db_$(date +%d-%m-%Y %H %M %S).sql'
 
 
 dump_triples:

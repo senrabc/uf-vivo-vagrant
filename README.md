@@ -11,7 +11,7 @@ them and I think this is a better way to provide them as examples to some folks.
 Your milage may vary.
 
 Note: the /.vagrant directory and the /work
-directory are in the .gitignore . work can be conducted there without being committed. 
+directory are in the .gitignore . work can be conducted there without being committed.
 
 ## Prereqs
 
@@ -52,6 +52,8 @@ TODO: Write history
 TODO: Write credits
 ## References
 https://github.com/lawlesst/vivo-vagrant
+https://wiki.duraspace.org/display/VTDA/The+SPARQL+Update+API
+
 [Vagrant](http://www.vagrantup.com/) configuration and install scripts for running
 ## License
 Apache 2:
