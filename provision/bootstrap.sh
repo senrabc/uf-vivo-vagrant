@@ -28,13 +28,17 @@ sudo add-apt-repository ppa:webupd8team/java -y
 sudo apt-get update -y
 echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
 echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
-sudo apt-get install oracle-java7-installer -y
+
+sudo add-apt-repository ppa:openjdk-r/ppa -y  
+sudo apt-get update -y   
+sudo apt-get install openjdk-7-jdk -y  
+#sudo apt-get install oracle-java7-installer -y
 
 # Install Tomcat 7 with JAVA_HOME export so Tomcat starts when install completes,
 # and then patch /etc/default/tomcat7 to specify Oracle Java 7
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 sudo -E apt-get install -y tomcat7 ant
-sudo sed -i '/#JAVA_HOME.*$/a JAVA_HOME=/usr/lib/jvm/java-7-oracle/' /etc/default/tomcat7
+sudo sed -i '/#JAVA_HOME.*$/a JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/' /etc/default/tomcat7
 
 # MySQL
 echo mysql-server mysql-server/root_password password vivo | sudo debconf-set-selections
